@@ -520,7 +520,7 @@ async function run() {
             core.setFailed(`Input parameter 'list-files' is set to invalid value '${listFiles}'`);
             return;
         }
-        core.info(`ref ${ref} , base: ${base}`);
+        core.info(`ref ${ref} , base: ${base}, filtersInput: ${filtersInput}`);
         const filter = new filter_1.Filter(filtersYaml);
         const files = await getChangedFiles(token, base, ref, initialFetchDepth);
         core.info(`Detected ${files.length} changed files`);
