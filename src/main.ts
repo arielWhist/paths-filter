@@ -31,7 +31,7 @@ async function run(): Promise<void> {
       core.setFailed(`Input parameter 'list-files' is set to invalid value '${listFiles}'`)
       return
     }
-
+    core.info(`ref ${ref} , base: ${base}`)
     const filter = new Filter(filtersYaml)
     const files = await getChangedFiles(token, base, ref, initialFetchDepth)
     core.info(`Detected ${files.length} changed files`)
